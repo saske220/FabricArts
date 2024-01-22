@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+@mixin inner($w: 73%, $mw: 1170px) {
+  width: w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin main-title {
+  font-size: 38px;
+  letter-spacing: (50/1000);
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+@mixin btn {
+  display: block;
+  background-color: #e40065;
+  font-size: 12px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.header {
+  padding-top: 70px;
+  padding-bottom: 100px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+  &__inner {
+    @include inner();
+  }
+
+  &__flex {
+    @include flex();
+  }
+
+  &__liflex {
+    @include flex();
+  }
+
+  &__list {
+    margin-left: 30px;
+  }
+}
+
+.visual {
+  width: 100%;
+  height: auto;
+}
+
+.main {
+}
+
+.work {
+  &__inner {
+    @include inner();
+  }
+  margin: 100px 0;
+  &__subtitle {
+    font-size: 12px;
+    color: #898989;
+  }
+
+  &__title {
+    font-size: 38px;
+  }
+  &__title::after {
+    content: "";
+    display: block;
+    margin-top: 30px;
+    width: 120px;
+    border: 1px solid #000;
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-weight: normal;
+  }
+
+  &__work__eg {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  &__flex {
+    @include flex();
+    margin-top: 60px;
+    .card {
+      &__title {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+
+      &__subtitle {
+        font-size: 12px;
+        color: #898989;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+.project {
+  background-color: #fdf8eb;
+  padding: 100px 0;
+  &__inner {
+    @include inner();
+  }
+
+  img {
+    max-width: 500px;
+  }
+
+  &__btn {
+    @include btn();
+    width: 200px;
+    margin: 30px 0;
+  }
+}
+
+.footer {
+  padding-top: 80px;
+  padding-bottom: 200px;
+  &__inner {
+    @include inner();
+  }
+
+  small {
+    text-align: right;
+  }
+}
+
+.company {
+  &__inner {
+    @include inner();
+    @include flex();
+  }
+
+  &__texts {
+    width: 700px;
+  }
+}
+
+.daichi {
+  margin: 60px;
+  &__inner {
+    @include inner();
+    background: url(/images/bg_project01.jpg) no-repeat center center/cover;
+    padding: 150px;
+  }
+
+  &__article {
+    padding-left: 80px;
+    width: 440px;
+  }
+
+  &__btn {
+    @include btn();
+    width: 180px;
+  }
+}
